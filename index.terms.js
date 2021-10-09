@@ -7,7 +7,7 @@ export const
   NamespaceURI = 6,
   LiteralDefinition = 7,
   Term = 9,
-  TypeDefinition = 10,
+  ClassDeclaration = 10,
   Optional = 12,
   Nullable = 13,
   Reference = 14,
@@ -22,7 +22,4 @@ export const
   OpenBracket = 23,
   Option = 24,
   LeftArrow = 25,
-  CloseBracket = 26,
-  ClassDeclaration = 27,
-  Export = 29,
-  EdgeDeclaration = 30
+  CloseBracket = 26

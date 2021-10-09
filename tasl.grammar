@@ -1,7 +1,6 @@
 @top Schema { (statement? newline)* statement? }
 
 @tokens {
-  Export { "::"}
   Pointer { "*" }
   Nullable { "?" }
   OpenBrace { "{" }
@@ -72,16 +71,10 @@ Component { Term RightArrow expression }
 Coproduct { OpenBracket delimited<Option>? CloseBracket }
 Option { Term (LeftArrow expression)? }
 
-statement { NamespaceDefinition | LiteralDefinition | TypeDefinition | ClassDeclaration | EdgeDeclaration }
+statement { NamespaceDefinition | LiteralDefinition | ClassDeclaration }
 
 NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Identifier NamespaceURI }
 
 LiteralDefinition { @specialize[@name=literal]<identifier, "literal"> Identifier Term }
 
-TypeDefinition { @specialize[@name=type]<identifier, "type"> Identifier expression }
-
-ClassDeclaration { @specialize[@name=class]<identifier, "class"> Term Export expression }
-
-EdgeDeclaration {
-  @specialize[@name=edge]<identifier, "edge"> Term Export (Term "=>" Term | Term "=/" expression "/=>" Term)
-}
+ClassDeclaration { @specialize[@name=class]<identifier, "class"> Term expression }
