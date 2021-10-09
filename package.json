@@ -29,7 +29,10 @@
 	},
 	"homepage": "https://github.com/underlay/lezer-tasl#readme",
 	"dependencies": {
-		"@lezer/common": "^0.15.7"
+		"@lezer/common": "^0.15.7" 
+	},
+	"peerDependencies": {
+		"@lezer/lr": "^0.15.4"
 	},
 	"devDependencies": {
 		"@lezer/generator": "^0.15.2"
