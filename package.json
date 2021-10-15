@@ -11,7 +11,7 @@
 		"index.terms.js"
 	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "ava",
 		"build": "lezer-generator tasl.grammar -o index.js"
 	},
 	"repository": {
@@ -19,6 +19,7 @@
 		"url": "git+https://github.com/underlay/lezer-tasl.git"
 	},
 	"keywords": [
+		"underlay",
 		"lezer",
 		"tasl"
 	],
@@ -29,10 +30,13 @@
 	},
 	"homepage": "https://github.com/underlay/lezer-tasl#readme",
 	"peerDependencies": {
-		"@lezer/lr": "^0.15.4",
-		"@lezer/common": "^0.15.7"
+		"@lezer/common": "^0.15.7",
+		"@lezer/lr": "^0.15.4"
 	},
 	"devDependencies": {
-		"@lezer/generator": "^0.15.2"
+		"@lezer/common": "^0.15.7",
+		"@lezer/generator": "^0.15.2",
+		"@lezer/lr": "^0.15.4",
+		"ava": "^4.0.0-alpha.2"
 	}
 }
