@@ -3,12 +3,11 @@
 	"version": "0.0.7",
 	"description": "",
 	"type": "module",
-	"main": "index.js",
+	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"files": [
-		"index.d.ts",
 		"index.js",
-		"index.terms.js"
+		"index.d.js"
 	],
 	"scripts": {
 		"test": "ava",
@@ -29,14 +28,12 @@
 		"url": "https://github.com/underlay/lezer-tasl/issues"
 	},
 	"homepage": "https://github.com/underlay/lezer-tasl#readme",
-	"peerDependencies": {
+	"dependencies": {
 		"@lezer/common": "^0.15.7",
 		"@lezer/lr": "^0.15.4"
 	},
 	"devDependencies": {
-		"@lezer/common": "^0.15.7",
 		"@lezer/generator": "^0.15.2",
-		"@lezer/lr": "^0.15.4",
 		"ava": "^4.0.0-alpha.2"
 	}
 }
