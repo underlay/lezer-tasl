@@ -5,8 +5,8 @@ import { resolve } from "node:path"
 
 import { parser } from "../index.js"
 
-test("Example", (t) => {
-	const input = fs.readFileSync(resolve("test", "example.tasl"), "utf-8")
+test("Schema", (t) => {
+	const input = fs.readFileSync(resolve("test", "schema.tasl"), "utf-8")
 	const tree = parser.parse(input)
 	const cursor = tree.cursor()
 	do {

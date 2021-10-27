@@ -8,7 +8,8 @@
   CloseBracket { "]" }
   RightArrow { "->" }
   LeftArrow { "<-" }
-  URI { "<>" }
+  URI { "!" }
+  Datatype { "$" }
 
   newline { "\n" }
   space { (" " | "\t")+ }
@@ -57,10 +58,12 @@ delimited<element> { (newline element?)* newline }
 Identifier { identifier }
 
 expression[@isGroup=Expression] {
-  Identifier | Reference | URI | Product | Coproduct
+  Identifier | URI | Literal | Product | Coproduct | Reference
 }
 
 Reference { Pointer Term }
+
+Literal { Datatype Term }
 
 Product { OpenBrace delimited<Component>? CloseBrace }
 Component { Term RightArrow expression }
@@ -68,10 +71,10 @@ Component { Term RightArrow expression }
 Coproduct { OpenBracket delimited<Option>? CloseBracket }
 Option { Term (LeftArrow expression)? }
 
-statement { NamespaceDefinition | LiteralDefinition | ClassDeclaration }
+statement { NamespaceDefinition | TypeDefinition | ClassDeclaration }
 
 NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Identifier NamespaceURI }
 
-LiteralDefinition { @specialize[@name=literal]<identifier, "literal"> Identifier Term }
+TypeDefinition { @specialize[@name=type]<identifier, "type"> Identifier expression }
 
 ClassDeclaration { @specialize[@name=class]<identifier, "class"> Term expression }
