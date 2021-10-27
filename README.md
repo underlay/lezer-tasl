@@ -4,7 +4,7 @@
 
 A Lezer grammar for the tasl schema language.
 
-> ⚠️ This is a low-level package for parsing the **AST** of the schema language - if you want to parse .tasl files into proper `tasl.Schema` objects, you want to use the main `tasl` package instead.
+> ⚠️ This is a low-level library for parsing the **AST** of the schema language - if you want to parse .tasl files into proper `tasl.Schema` objects, you want to use the main [`tasl`](https://github.com/underlay/tasl) package instead.
 
 ## Table of Contents
 
