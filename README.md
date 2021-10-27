@@ -1,6 +1,6 @@
 # lezer-tasl
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![license](https://img.shields.io/github/license/underlay/lezer-tasl)](https://opensource.org/licenses/MIT) [![NPM version](https://img.shields.io/npm/v/lezer-tasl)](https://www.npmjs.com/package/tasl) ![TypeScript types](https://img.shields.io/npm/types/lezer-tasl)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme) [![license](https://img.shields.io/github/license/underlay/lezer-tasl)](https://opensource.org/licenses/MIT) [![NPM version](https://img.shields.io/npm/v/lezer-tasl)](https://www.npmjs.com/package/lezer-tasl) ![TypeScript types](https://img.shields.io/npm/types/lezer-tasl)
 
 A Lezer grammar for the tasl schema language.
 
