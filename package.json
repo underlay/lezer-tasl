@@ -7,7 +7,7 @@
 	"types": "lib/index.d.ts",
 	"files": [
 		"index.js",
-		"index.d.js"
+		"index.d.ts"
 	],
 	"scripts": {
 		"test": "ava",
