@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.0.12]
+
+### Added
+
+- added closedBy and openedBy props for brackets and braces
+
 ## [0.0.11]
 
 ### Changed
@@ -35,6 +41,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Since index.js and index.terms.js are compiled outputs, they're no longer committed to the repo
 - Remove the `literal` declaration statement from the grammar
 
-[unreleased]: https://github.com/underlay/lezer-tasl/compare/v0.0.10...HEAD
+[unreleased]: https://github.com/underlay/lezer-tasl/compare/v0.0.12...HEAD
+[0.0.12]: https://github.com/underlay/lezer-tasl/compare/v0.0.12
+[0.0.11]: https://github.com/underlay/lezer-tasl/compare/v0.0.11
 [0.0.10]: https://github.com/underlay/lezer-tasl/compare/v0.0.10
 [0.0.9]: https://github.com/underlay/lezer-tasl/compare/v0.0.9

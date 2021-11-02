@@ -1,11 +1,11 @@
 @top Schema { (statement? newline)* statement? }
 
 @tokens {
+  OpenBrace[closedBy="CloseBrace"] { "{" }
+  CloseBrace[openedBy="OpenBrace"] { "}" }
+  OpenBracket[closedBy="CloseBracket"] { "[" }
+  CloseBracket[openedBy="OpenBracket"] { "]" }
   Pointer { "*" }
-  OpenBrace { "{" }
-  CloseBrace { "}" }
-  OpenBracket { "[" }
-  CloseBracket { "]" }
   RightArrow { "->" }
   LeftArrow { "<-" }
   URI { "!" }
@@ -52,6 +52,8 @@
 }
 
 @skip { space | Comment }
+
+
 
 delimited<element> { (newline element?)* newline }
 
