@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.0.11]
+
+### Changed
+
+- consolidated tests into a single file
+- fixed package.json main field
+
 ## [0.0.10]
 
 ### Added

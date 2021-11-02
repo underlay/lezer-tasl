@@ -3,8 +3,8 @@
 	"version": "0.0.10",
 	"description": "A Lezer grammar for the tasl schema language",
 	"type": "module",
-	"main": "lib/index.js",
-	"types": "lib/index.d.ts",
+	"main": "index.js",
+	"types": "index.d.ts",
 	"files": [
 		"index.js",
 		"index.d.ts"
