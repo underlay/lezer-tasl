@@ -5,6 +5,8 @@
   CloseBrace[openedBy="OpenBrace"] { "}" }
   OpenBracket[closedBy="CloseBracket"] { "[" }
   CloseBracket[openedBy="OpenBracket"] { "]" }
+  RightArrow { "->" }
+  LeftArrow { "<-" }
 
   newline { "\n" }
   space { (" " | "\t")+ }
@@ -61,10 +63,10 @@ Reference { "*" Term }
 Literal { "$" Term }
 
 Product { OpenBrace delimited<Component>? CloseBrace }
-Component { Term "->" expression }
+Component { Term RightArrow expression }
 
 Coproduct { OpenBracket delimited<Option>? CloseBracket }
-Option { Term ("<-" expression)? }
+Option { Term (LeftArrow expression)? }
 
 statement { NamespaceDefinition | TypeDefinition | ClassDeclaration }
 

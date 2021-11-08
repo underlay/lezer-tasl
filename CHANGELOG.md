@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.0.14]
+
+### Changed
+
+- Add names for RightArrow and LeftArrow
+
 ## [0.0.13]
 
 ### Changed
