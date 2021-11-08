@@ -1,6 +1,6 @@
 {
 	"name": "lezer-tasl",
-	"version": "0.0.13",
+	"version": "0.0.14",
 	"description": "A Lezer grammar for the tasl schema language",
 	"type": "module",
 	"main": "index.js",
