@@ -5,11 +5,6 @@
   CloseBrace[openedBy="OpenBrace"] { "}" }
   OpenBracket[closedBy="CloseBracket"] { "[" }
   CloseBracket[openedBy="OpenBracket"] { "]" }
-  Pointer { "*" }
-  RightArrow { "->" }
-  LeftArrow { "<-" }
-  URI { "!" }
-  Datatype { "$" }
 
   newline { "\n" }
   space { (" " | "\t")+ }
@@ -53,30 +48,28 @@
 
 @skip { space | Comment }
 
-
-
 delimited<element> { (newline element?)* newline }
 
-Identifier { identifier }
-
 expression[@isGroup=Expression] {
-  Identifier | URI | Literal | Product | Coproduct | Reference
+  Type { identifier } | URI | Literal | Product | Coproduct | Reference
 }
 
-Reference { Pointer Term }
+URI { "!" }
 
-Literal { Datatype Term }
+Reference { "*" Term }
+
+Literal { "$" Term }
 
 Product { OpenBrace delimited<Component>? CloseBrace }
-Component { Term RightArrow expression }
+Component { Term "->" expression }
 
 Coproduct { OpenBracket delimited<Option>? CloseBracket }
-Option { Term (LeftArrow expression)? }
+Option { Term ("<-" expression)? }
 
 statement { NamespaceDefinition | TypeDefinition | ClassDeclaration }
 
-NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Identifier NamespaceURI }
+NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Prefix { identifier } NamespaceURI }
 
-TypeDefinition { @specialize[@name=type]<identifier, "type"> Identifier expression }
+TypeDefinition { @specialize[@name=type]<identifier, "type"> Name { identifier } expression }
 
 ClassDeclaration { @specialize[@name=class]<identifier, "class"> Term expression }

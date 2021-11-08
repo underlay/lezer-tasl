@@ -6,9 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.0.13]
+
 ### Changed
 
 - Upgraded ava to 4.0.0-rc.1
+- More consistent syntax node naming
 
 ## [0.0.12]
 
@@ -45,7 +48,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Since index.js and index.terms.js are compiled outputs, they're no longer committed to the repo
 - Remove the `literal` declaration statement from the grammar
 
-[unreleased]: https://github.com/underlay/lezer-tasl/compare/v0.0.12...HEAD
+[unreleased]: https://github.com/underlay/lezer-tasl/compare/v0.0.13...HEAD
+[0.0.13]: https://github.com/underlay/lezer-tasl/compare/v0.0.13
 [0.0.12]: https://github.com/underlay/lezer-tasl/compare/v0.0.12
 [0.0.11]: https://github.com/underlay/lezer-tasl/compare/v0.0.11
 [0.0.10]: https://github.com/underlay/lezer-tasl/compare/v0.0.10
