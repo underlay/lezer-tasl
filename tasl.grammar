@@ -42,10 +42,10 @@
   scheme { std.asciiLetter $[A-Za-z0-9+\-.]* }
   absoluteURI { scheme ":" ("//" authority | "/"? pchar+) ("/" pchar*)* }
 
-  Term { identifier ":" (pchar | "/" | "?")+ }
+  term { identifier ":" (pchar | "/" | "?")+ }
   NamespaceURI { absoluteURI $[/?#] }
 
-  @precedence { Term identifier }
+  @precedence { term identifier }
 }
 
 @skip { space | Comment }
@@ -53,25 +53,25 @@
 delimited<element> { (newline element?)* newline }
 
 expression[@isGroup=Expression] {
-  Type { identifier } | URI | Literal | Product | Coproduct | Reference
+  Type { identifier } | Product | Coproduct | Reference
 }
 
-URI { "!" }
+Key { term }
 
-Reference { "*" Term }
-
-Literal { "$" Term }
+Reference { "*" Key }
 
 Product { OpenBrace delimited<Component>? CloseBrace }
-Component { Term RightArrow expression }
+Component { Key RightArrow expression }
 
 Coproduct { OpenBracket delimited<Option>? CloseBracket }
-Option { Term (LeftArrow expression)? }
+Option { Key (LeftArrow expression)? }
 
-statement { NamespaceDefinition | TypeDefinition | ClassDeclaration }
+statement { NamespaceDefinition | LiteralDefinition | TypeDefinition | ClassDeclaration }
 
 NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Prefix { identifier } NamespaceURI }
 
+LiteralDefinition { @specialize[@name=literal]<identifier, "literal"> Name { identifier } Datatype { term } }
+
 TypeDefinition { @specialize[@name=type]<identifier, "type"> Name { identifier } expression }
 
-ClassDeclaration { @specialize[@name=class]<identifier, "class"> Term expression }
+ClassDeclaration { @specialize[@name=class]<identifier, "class"> Key expression }

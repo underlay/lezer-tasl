@@ -2,7 +2,7 @@ namespace ul http://underlay.org/ns/
 
 type value [
 	ul:uri
-	ul:literal <- !
+	ul:literal <- uri
 	ul:product <- * ul:product
 	ul:coproduct <- * ul:coproduct
 	ul:reference <- * ul:class
@@ -12,7 +12,7 @@ class ul:product {}
 
 class ul:component {
 	ul:source -> * ul:product
-	ul:key -> !
+	ul:key -> uri
 	ul:value -> value
 }
 
@@ -20,11 +20,11 @@ class ul:coproduct {}
 
 class ul:option {
 	ul:source -> * ul:coproduct
-	ul:key -> !
+	ul:key -> uri
 	ul:value -> value
 }
 
 class ul:class {
-	ul:key -> !
+	ul:key -> uri
 	ul:value -> value
 }

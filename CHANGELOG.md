@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [0.1.0]
+
+### Changed
+
+- Added `literal` statements back for better compatibility with taslx mappings
+
 ## [0.0.14]
 
 ### Changed
