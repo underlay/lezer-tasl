@@ -40,10 +40,10 @@
   authority { (userinfo "@")? host (":" std.digit+)? }
   pchar { unreserved | pctEncoded | subDelims | ":" | "@" }
   scheme { std.asciiLetter $[A-Za-z0-9+\-.]* }
-  absoluteURI { scheme ":" ("//" authority | "/"? pchar+) ("/" pchar*)* }
+  uri { scheme ":" ("//" authority | "/"? pchar+) ("/" pchar*)* }
 
-  term { identifier ":" (pchar | "/" | "?")+ }
-  NamespaceURI { absoluteURI $[/?#] }
+  term { identifier ":" (pchar | "/" | "?")* pchar+ }
+  Namespace { uri $[/?#] }
 
   @precedence { term identifier }
 }
@@ -52,13 +52,7 @@
 
 delimited<element> { (newline element?)* newline }
 
-expression[@isGroup=Expression] {
-    URI { @specialize[@name=uri]<identifier, "uri"> }
-  | Type { identifier }
-  | Product
-  | Coproduct
-  | Reference
-}
+expression[@isGroup=Expression] { Type { identifier } | Product | Coproduct | Reference }
 
 Key { term }
 
@@ -72,7 +66,7 @@ Option { Key (LeftArrow expression)? }
 
 statement { NamespaceDefinition | LiteralDefinition | TypeDefinition | ClassDeclaration }
 
-NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Prefix { identifier } NamespaceURI }
+NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Prefix { identifier } Namespace }
 
 LiteralDefinition { @specialize[@name=literal]<identifier, "literal"> Name { identifier } Datatype { term } }
 
