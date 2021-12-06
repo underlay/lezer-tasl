@@ -52,11 +52,16 @@
 
 delimited<element> { (newline element?)* newline }
 
-expression[@isGroup=Expression] { Type { identifier } | Product | Coproduct | Reference }
-
 Key { term }
 
-Reference { "*" Key }
+expression[@isGroup=Expression] {
+    Type { identifier }
+  | URI { "!" }
+  | Literal { "$" Key }
+  | Product
+  | Coproduct
+  | Reference { "*" Key }
+}
 
 Product { OpenBrace delimited<Component>? CloseBrace }
 Component { Key RightArrow expression }
@@ -64,11 +69,9 @@ Component { Key RightArrow expression }
 Coproduct { OpenBracket delimited<Option>? CloseBracket }
 Option { Key (LeftArrow expression)? }
 
-statement { NamespaceDefinition | LiteralDefinition | TypeDefinition | ClassDeclaration }
+statement { NamespaceDefinition | TypeDefinition | ClassDeclaration }
 
 NamespaceDefinition { @specialize[@name=namespace]<identifier, "namespace"> Prefix { identifier } Namespace }
-
-LiteralDefinition { @specialize[@name=literal]<identifier, "literal"> Name { identifier } Datatype { term } }
 
 TypeDefinition { @specialize[@name=type]<identifier, "type"> Name { identifier } expression }
 
