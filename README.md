@@ -49,7 +49,7 @@ export const parser: LRParser
 
 ## Testing
 
-Tests use [AVA 4](https://github.com/avajs/ava) (currently in alpha) and live in the [test](./test/) directory.
+Tests use [AVA 4](https://github.com/avajs/ava) and live in the [test](./test/) directory.
 
 ```
 npm run test
